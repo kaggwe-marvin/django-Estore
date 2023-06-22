@@ -1,0 +1,51 @@
+{% extends 'base.html' %}{% block content%} {% load static %}
+<main>
+  <div class="card-small">
+    <div class="row">
+      <form class="col s6" method="post" action="{% url 'bakery24:signin' %}">
+        {% csrf_token %}
+        <div class="card large">
+          <div class="col s12">
+            <span class="card-title">
+              <h4 class="center-align">
+                <i class="medium material-icons">account_circle</i>
+              </h4>
+            </span>
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="username"
+                  type="text"
+                  name="username"
+                  class="validate" />
+                <label for="username">Username</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  class="validate" />
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s6">
+                <button
+                  class="btn waves-effect waves-light hovarable"
+                  type="submit">
+                  Sign In
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock content %}

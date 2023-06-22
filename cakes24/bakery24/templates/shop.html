@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+<main>
+  <div class="container">
+    <h1>Shop</h1>
+    <div class="row">
+      {% for product in products %}
+      <div class="col s12 m6">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+            <span class="card-title">{{ product.name }}</span>
+            <a
+              href="#"
+              class="btn-floating halfway-fab waves-effect waves-light red">
+              <i class="material-icons">add</i>
+            </a>
+          </div>
+          <div class="card-content">
+            <p>{{ product.description }}</p>
+            <p>Price: UGX{{ product.price }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+{% endblock content %}

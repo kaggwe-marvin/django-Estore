@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" />
+    <!-- Import Materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'materialize/css/materialize.min.css' %}"
+      media="screen,projection" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <nav>
+        <div class="nav-wrapper pink lighten-1">
+          <a href="{% url 'bakery24:shop' %}" class="brand-logo center"
+            ><i class="large material-icons">store</i>BAKERY24</a
+          >
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li class="active">
+              <a href="{% url 'bakery24:shop' %}">Go to shop</a>
+            </li>
+            <li class="active">
+              <a href="{% url 'bakery24:cart' %}"
+                >Make order<span class="new badge">4</span></a
+              >
+            </li>
+            <li class="active">
+              <a href="{% url 'bakery24:checkout' %}">Checkout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    {% block content %}{% endblock content %}
+    <footer class="page-footer pink lighten-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Cake24</h5>
+            <p class="grey-text text-lighten-4">
+              One place for all your bakery needs
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">BAKERY24</h5>
+            <ul>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="{% url 'bakery24:shop' %}"
+                  >GO TO SHOP</a
+                >
+              </li>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="{% url 'bakery24:cart' %}"
+                  >go to cart</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2023 Copyright @bakery24
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Import Materialize JavaScript -->
+    <script src="{% static 'materialize/js/materialize.min.js' %}"></script>
+  </body>
+</html>

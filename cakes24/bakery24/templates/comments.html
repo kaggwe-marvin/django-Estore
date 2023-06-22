@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<main>
+  <div class="container">
+    <h1>comments</h1>
+    <ul>
+        {% for item in reviewed %}
+        <li>{{item.review}}</li>
+        {% endfor %}  
+    </ul>
+</main>
+
+{% endblock content %}
