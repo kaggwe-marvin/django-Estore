@@ -96,11 +96,11 @@ source .venv/bin/activate
 
 ### 3) Install dependencies
 
-This repository currently **does not include a `requirements.txt`**, so install at least:
-
 ```bash
-pip install django==4.2 pillow
+pip install -r requirements.txt
 ```
+
+This installs Django 4.2 and Pillow.
 
 Why Pillow? The `Product.image` field uses `ImageField`, which requires Pillow.
 
@@ -161,10 +161,7 @@ These are issues that should be addressed to make the project more robust and pr
    - The `__str__` method appears incorrectly placed and references `self.text`, which does not exist (Review uses `review`).
    - Add `__str__` methods inside each model and return valid fields, e.g. `return self.name` for Product.
 
-5. **No `requirements.txt`**
-   - Add one to make setup reproducible.
-
-6. **Database committed to repo**
+5. **Database committed to repo**
    - `db.sqlite3` is included. Usually you add it to `.gitignore` for real projects.
 
 ---
